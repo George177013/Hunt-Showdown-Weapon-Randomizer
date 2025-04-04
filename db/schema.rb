@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_04_092405) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_04_135512) do
   create_table "ammos", force: :cascade do |t|
     t.string "name"
     t.integer "price"
@@ -26,6 +26,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_04_092405) do
     t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bloodline_rank", null: false
   end
 
   create_table "tools", force: :cascade do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_04_092405) do
     t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bloodline_rank", null: false
   end
 
   create_table "weapons", force: :cascade do |t|
@@ -44,6 +46,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_04_092405) do
     t.string "kind"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "bloodline_rank", null: false
   end
 
   add_foreign_key "ammos", "weapons"
