@@ -7,26 +7,38 @@ class Loadout
     @ammos = { ammo_primary: [], ammo_secondary: [] }
     @consumables = []
     @tools = []
+    @total_cost
   end
 
-  def randomize(budget, slots)
-    @primary_weapon = Weapon.order("RANDOM()").where("size >=2").first
-    slots_left = slots - @primary_weapon.size
-    @secondary_weapon = Weapon.order("RANDOM()").where(size: slots_left).first
+  def randomize
+    config = {
+      slots: 4,
+      budget: 100,
+      bloodline_rank: 100,
+      tools_count: 4,
+      consumables_count: 4
+    }
 
-    ammo_slots1 = @primary_weapon.ammo_slots
-    ammo_slots2 = @secondary_weapon.ammo_slots
+    max_attempts = 32
+    attempts = 0
 
-    ammo_slots1.times do
-      @ammos[:ammo_primary] << @primary_weapon.ammos.order("RANDOM()").first
-    end
+    begin
+      attempts += 1
 
-    ammo_slots2.times do
-      @ammos[:ammo_secondary] << @secondary_weapon.ammos.order("RANDOM()").first
-    end
+      @primary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where("size >= 2").order("RANDOM()").first
+      slots_left = config[:slots] - @primary_weapon.size
+      @secondary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where(size: slots_left).order("RANDOM()").first
 
-    @consumables = Consumable.order("RANDOM()").first(4)
+      @ammos[:ammo_primary] << @primary_weapon.ammos.order("RANDOM()").first(@primary_weapon.ammo_slots)
 
-    @tools = Tool.order("RANDOM()").first(4)
+      @ammos[:ammo_secondary] << @secondary_weapon.ammos.order("RANDOM()").first(@secondary_weapon.ammo_slots)
+
+      @consumables = Consumable.where("bloodline_rank <= ?", config[:bloodline_rank]).order("RANDOM()").first(config[:consumables_count])
+
+      @tools = Tool.where("bloodline_rank <= ?", config[:bloodline_rank]).order("RANDOM()").first(config[:tools_count])
+
+      @total_cost = @primary_weapon.price + @secondary_weapon.price + @ammos[:ammo_primary].sum(&:price) + @ammos[:ammo_secondary].sum(&:price) + @consumables.sum(&:price) + @tools.sum(&:price)
+
+    end while @total_cost > config[:budget] && attempts < max_attempts
   end
 end
