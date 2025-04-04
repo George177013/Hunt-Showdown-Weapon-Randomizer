@@ -3,7 +3,9 @@
 one:
   name: MyString
   price: 1
+  weapon: one
 
 two:
   name: MyString
   price: 1
+  weapon: two

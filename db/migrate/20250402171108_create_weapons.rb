@@ -3,8 +3,9 @@ class CreateWeapons < ActiveRecord::Migration[8.0]
     create_table :weapons do |t|
       t.string :name, null: false
       t.integer :price, null: false
-      t.integer :slot, null: false
-      t.references :ammo, null: false, foreign_key: true
+      t.integer :size, null: false
+      t.integer :ammo_slots, null: false
+      t.string :type
 
       t.timestamps
     end
