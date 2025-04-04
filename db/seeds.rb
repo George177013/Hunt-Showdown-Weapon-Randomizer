@@ -37,12 +37,30 @@ Consumable.create!([
   { name: "Vitality Shot", price: 15, kind: "Healing" },
   { name: "Weak Vitality Shot", price: 5, kind: "Healing" },
   { name: "Antidote Shot", price: 20, kind: "Buff" },
-  { name: "Sticky Bomb", price: 30, kind: "Explosive" }
+  { name: "Sticky Bomb", price: 30, kind: "Explosive" },
+  { name: "Ammo Box", price: 35, kind: "Utility" },
+  { name: "Poison Bomb", price: 25, kind: "Explosive" },
+  { name: "Flash Bomb", price: 15, kind: "Explosive" },
+  { name: "Flares", price: 10, kind: "Utility" },
+  { name: "Tonic", price: 10, kind: "Buff" },
+  { name: "Bandage", price: 5, kind: "Healing" },
+  { name: "Bait", price: 12, kind: "Utility" },
+  { name: "Melee Trap", price: 15, kind: "Trap" }
 ])
+
 
 Tool.create!([
   { name: "First Aid Kit", price: 20, kind: "Healing" },
   { name: "Choke Bomb", price: 10, kind: "Utility" },
   { name: "Concertina Bomb", price: 25, kind: "Trap" },
-  { name: "Knife", price: 15, kind: "Melee" }
+  { name: "Knife", price: 15, kind: "Melee" },
+  { name: "Sledgehammer", price: 25, kind: "Melee" },
+  { name: "Bear Trap", price: 35, kind: "Trap" },
+  { name: "Explosive Barrel", price: 40, kind: "Explosive" },
+  { name: "Pistol", price: 35, kind: "Melee" },
+  { name: "Throwing Axes", price: 20, kind: "Melee" },
+  { name: "Flashbang", price: 18, kind: "Utility" },
+  { name: "Crowbar", price: 12, kind: "Melee" },
+  { name: "Dynamite", price: 45, kind: "Explosive" },
+  { name: "Healing Salve", price: 15, kind: "Healing" }
 ])
