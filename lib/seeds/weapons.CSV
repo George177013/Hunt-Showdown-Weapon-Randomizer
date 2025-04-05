@@ -1,0 +1,164 @@
+name;price;size;ammo_slots;kind;bloodline_rank
+1865 Carbine;70;3;1;rifle;1
+1865 Carbine Silencer;80;3;1;rifle;1
+1865 Carbine Aperture;74;3;1;rifle;1
+Auto-4 Shorty;300;2;1;shotgun;1
+Auto-5;600;3;1;shotgun;1
+Baseball Bat;40;1;0;melee;1
+Berthier 1892;330;3;2;rifle;1
+Berthier 1892 Deadeye;347;3;2;rifle;1
+Berthier 1892 Marksman;363;3;2;rifle;1
+Berthier 1892 Riposte;340;3;2;rifle;1
+Bomb Lance;199;3;2;special;1
+Bomb Launcher;110;2;2;special;1
+Bornheim No .3;146;1;1;pistol;1
+Bornheim No .3 Extended;203;1;1;pistol;1
+Bornheim No .3 Match;180;2;1;pistol;1
+Bornheim No .3 Silencer;167;1;1;pistol;1
+Bornheim No .3 Dual;292;2;1;pistol_dual;1
+Bornheim No .3 Extended Dual;406;2;1;pistol_dual;1
+Bornheim No .3 Silencer Dual;334;2;1;pistol_dual;1
+Cavalry Saber;50;1;0;melee;1
+Centennial;157;3;1;rifle;1
+Centennial Pointman;114;2;1;rifle;1
+Centennial Shorty;103;2;1;rifle;1
+Centennial Shorty Silencer;118;2;1;rifle;1
+Centennial Sniper;181;3;1;rifle;1
+Centennial Trauma;167;3;1;rifle;1
+Chu Ko Nu;75;2;1;special;1
+Combat Axe;40;1;0;melee;1
+Conversion;55;1;1;pistol;1
+Conversion Chain Pistol;84;1;1;pistol;1
+Conversion Dual;110;2;1;pistol_dual;1
+Conversion Chain Pistol Dual;168;2;1;pistol_dual;1
+Crossbow;50;3;2;special;1
+Crossbow Deadeye;53;3;2;special;1
+Dolch 96;690;1;1;pistol;1
+Dolch 96 Bullseye;725;1;1;pistol;1
+Dolch 96 Claw;700;1;1;pistol;1
+Dolch 96 Precision;730;2;1;pistol;1
+Dolch 96 Dual;1380;2;1;pistol;1
+Dolch 96 Bullseye Dual;1450;2;1;pistol;1
+Dolch 96 Claw Dual;1400;2;1;pistol;1
+Drilling;510;3;2;rifle;1
+Drilling Hatchet;340;2;2;rifle;1
+Drilling Shorty;330;2;2;rifle;1
+Frontier 73C;41;3;1;rifle;1
+Frontier 73C;45;3;1;rifle;1
+Frontier 73C;47;3;1;rifle;1
+Hand Crossbow;30;1;2;special;1
+Infantry 73L;78;3;1;rifle;1
+Infantry 73L Bayonet;88;3;1;rifle;1
+Infantry 73L Sniper;90;3;1;rifle;1
+Katana;115;1;0;melee;1
+Krag;450;3;1;rifle;1
+Krag Bayonet;460;3;1;rifle;1
+Krag Silencer;517;3;1;rifle;1
+Krag Sniper;517;3;1;rifle;1
+LeMat;83;1;2;pistol;1
+LeMat Dual;166;2;2;pistol_dual;1
+LeMat Carbine;115;3;2;rifle;1
+LeMat Carbine Marksman;127;3;2;rifle;1
+Lebel 1886;397;3;1;rifle;1
+Lebel 1886 Aperture;417;3;1;rifle;1
+Lebel 1886 Marksman;437;3;1;rifle;1
+Lebel 1886 Talon;407;3;1;rifle;1
+Machete;30;1;0;melee;1
+Mako 1895;360;3;1;rifle;1
+Mako 1895 Aperture;378;3;1;rifle;1
+Mako 1895 Claw;370;3;1;rifle;1
+Marathon;68;3;1;rifle;1
+Marathon Swift;95;3;1;rifle;1
+Martini-Henry;122;3;2;rifle;1
+Martini-Henry Deadeye;128;3;2;rifle;1
+Martini-Henry Ironside;159;3;2;rifle;1
+Martini-Henry Marksmann;134;3;2;rifle;1
+Martini-Henry Riposte;132;3;2;rifle;1
+Maynard Sniper;139;3;2;rifle;1
+Maynard Sniper Silencer;159;3;2;rifle;1
+Mosin Obrez;290;2;1;rifle;1
+Mosin Obrez Extended;350;2;1;rifle;1
+Mosin Obrez Mace;300;2;1;rifle;1
+Mosin Obrez Match;345;3;1;rifle;1
+Mosin Obrez Sharpeye;362;3;1;rifle;1
+Mosin-Nagant;620;3;1;rifle;1
+Mosin-Nagant Avtomat;1250;3;1;rifle;1
+Mosin-Nagant Bayonet;630;3;1;rifle;1
+Mosin-Nagant Sniper;713;3;1;rifle;1
+Nagant M1895;24;1;1;pistol;1
+Nagant M1895 Deadeye;30;1;1;pistol;1
+Nagant M1895 Precision;29;1;1;pistol;1
+Nagant M1895 Silencer;27;1;1;pistol;1
+Nagant M1895 Dual;48;2;1;pistol_dual;1
+Nagant M1895 Silencer Dual;54;2;1;pistol_dual;1
+New Army;90;1;1;pistol;1
+New Army Swift;108;1;1;pistol;1
+New Army Dual;180;2;1;pistol_dual;1
+New Army Swift Dual;216;2;1;pistol_dual;1
+Nitro Express;1015;3;1;rifle;1
+Officer;96;1;1;pistol;1
+Officer Brawler;106;1;1;pistol;1
+Officer Carbine;183;3;1;rifle;1
+Officer Carbine Deadeye;192;3;1;rifle;1
+Officer Dual;192;2;1;pistol_dual;1
+Officer Brawler Dual;212;2;1;pistol_dual;1
+Pax;80;1;1;pistol;1
+Pax Claw;90;1;1;pistol;1
+Pax Trueshot;141;1;1;pistol;1
+Pax Dual;160;2;1;pistol_dual;1
+Pax Claw Dual;180;2;1;v;1
+Pax Trueshot Dual;282;2;1;pistol_dual;1
+Railroad Hammer;45;1;0;melee;1
+Ranger 73;75;3;1;rifle;1
+Ranger 73;79;3;1;rifle;1
+Ranger 73;128;3;1;rifle;1
+Ranger 73;85;3;1;rifle;1
+Rival 78;150;3;1;shotgun;1
+Rival 78 Mace;135;2;1;shotgun;1
+Rival 78 Shorty;125;2;1;shotgun;1
+Rival 78 Trauma;160;3;1;shotgun;1
+Romero 77;66;3;2;shotgun;1
+Romero 77 Alamo;98;3;2;shotgun;1
+Romero 77 Hatchet;56;2;2;shotgun;1
+Romero 77 Shorty;46;2;2;shotgun;1
+Romero 77 Talon;76;3;2;shotgun;1
+Scottfield;77;1;1;pistol;1
+Scottfield Brawler;87;1;1;pistol;1
+Scottfield Precision;85;2;1;pistol;1
+Scottfield Spitfire;108;1;1;pistol;1
+Scottfield Swift;95;1;1;pistol;1
+Scottfield Dual;154;2;1;pistol_dual;1
+Scottfield Brawler Dual;174;2;1;pistol_dual;1
+Scottfield Spitfire Dual;216;2;1;pistol_dual;1
+Scottfield Swift Dual;190;2;1;pistol_dual;1
+Slate;333;3;1;shotgun;1
+Slate Riposte;343;3;1;shotgun;1
+Sparks Pistol;155;1;2;pistol;1
+Sparks Pistol Silencer;178;1;2;pistol;1
+Sparks Pistol Dual;310;2;2;pistol_dual;1
+Sparks Pistol Silencer Dual;356;2;2;pistol_dual;1
+Sparks Silencer;149;3;2;rifle;1
+Sparks Sniper;150;3;2;rifle;1
+Specter 1882;188;3;1;shotgun;1
+Specter 1882 Bayonet;198;2;1;shotgun;1
+Specter 1882 Shorty;164;3;1;shotgun;1
+Springfield 1866;38;3;2;Rifle;1
+Springfield 1866 Bayonet;48;3;2;Rifle;1
+Springfield 1866 Bullseye;35;2;2;Rifle;1
+Springfield 1866 Marksman;42;3;2;Rifle;1
+Springfield 1866 Shorty;33;2;2;Rifle;1
+Springfield 1866 Striker;43;2;2;Rifle;1
+Terminus;238;3;1;Shotgun;1
+Terminus Shorty;218;2;1;Shotgun;1
+Uppercut;310;1;1;pistol;1
+Uppercut Deadeye;337;2;1;pistol;1
+Uppercut Precision;321;2;1;pistol;1
+Uppercut Dual;620;2;1;pistol_dual;1
+Vandal 73C Bullseye;37;2;1;rifle;1
+Vandal 73C Striker;45;2;1;rifle;1
+Vetterli 71;105;3;1;rifle;1
+Vetterli 71 Bayonet;115;3;1;rifle;1
+Vetterli 71 Cyclone;280;3;1;rifle;1
+Vetterli 71 Deadeye;110;3;1;rifle;1
+Vetterli 71 Marksman;116;3;1;rifle;1
+Vetterli 71 Silencer;120;3;1;rifle;1

@@ -1,0 +1,31 @@
+name;price;kind;bloodline_rank
+Ammo Box;65;utility;1
+Antidote Shot;55;utility;21
+Antidote Shot (Weak);30;utility;1
+Big Dynamite Bundle;110;throwable;58
+Chaos Bomb;15;throwable;31
+Choke Beetle;22;throwable;27
+Concertine Bomb;48;throwable;37
+Dark Dynamite Satchel;100;throwable;46
+Dynmaite Bundle;75;throwable;15
+Dynamite Stick;18;throwable;1
+Fire Beetle;57;throwable;27
+Fire Bomb;30;throwable;1
+Flash Bomb;25;throwable;50
+Frag Bomb;103;throwable;41
+Hellfire Bomb;70;throwable;43
+Hive Bomb;40;throwable;48
+Liquid Fire Bomb;35;throwable;43
+Medical Pack;35;utility;1
+Poison Bomb;25;throwable;39
+Recovery Shot;140;utility;1
+Regeneration Shot;105;utility;13
+Regeneration Shot (Weak);40;utility;1
+Stalker Beetle;45;throwable;27
+Stamina Shot;100;utility;10
+Stamina Shot (Weak);60;utility;1
+Sticky Bomb;64;throwable;1
+Tool Box;70;utility;55
+Vitality Shot;85;utility;7
+Vitality Shot (Weak);20;utility;1
+Waxed Dynamite Stick;24;throwable;19

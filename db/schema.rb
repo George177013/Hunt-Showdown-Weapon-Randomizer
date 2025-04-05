@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_04_135512) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_05_160241) do
   create_table "ammos", force: :cascade do |t|
     t.string "name"
     t.integer "price"
     t.integer "weapon_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "pool", default: 1, null: false
     t.index ["weapon_id"], name: "index_ammos_on_weapon_id"
   end
 
