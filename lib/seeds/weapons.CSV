@@ -44,9 +44,11 @@ Drilling;510;3;2;rifle;1
 Drilling Hatchet;340;2;2;rifle;1
 Drilling Shorty;330;2;2;rifle;1
 Frontier 73C;41;3;1;rifle;1
-Frontier 73C;45;3;1;rifle;1
-Frontier 73C;47;3;1;rifle;1
+Frontier 73C Marksman;45;3;1;rifle;1
+Frontier 73C Silencer;47;3;1;rifle;1
 Hand Crossbow;30;1;2;special;1
+Haymaker;279;2;2;pistol;1
+Hunting Bow;57;2;2;special;1
 Infantry 73L;78;3;1;rifle;1
 Infantry 73L Bayonet;88;3;1;rifle;1
 Infantry 73L Sniper;90;3;1;rifle;1
@@ -110,9 +112,9 @@ Pax Claw Dual;180;2;1;v;1
 Pax Trueshot Dual;282;2;1;pistol_dual;1
 Railroad Hammer;45;1;0;melee;1
 Ranger 73;75;3;1;rifle;1
-Ranger 73;79;3;1;rifle;1
-Ranger 73;128;3;1;rifle;1
-Ranger 73;85;3;1;rifle;1
+Ranger 73 Aperture;79;3;1;rifle;1
+Ranger 73 Swift;128;3;1;rifle;1
+Ranger 73 Talon;85;3;1;rifle;1
 Rival 78;150;3;1;shotgun;1
 Rival 78 Mace;135;2;1;shotgun;1
 Rival 78 Shorty;125;2;1;shotgun;1
@@ -154,6 +156,7 @@ Uppercut;310;1;1;pistol;1
 Uppercut Deadeye;337;2;1;pistol;1
 Uppercut Precision;321;2;1;pistol;1
 Uppercut Dual;620;2;1;pistol_dual;1
+Vandal 73C;35;2;1;rifle;1
 Vandal 73C Bullseye;37;2;1;rifle;1
 Vandal 73C Striker;45;2;1;rifle;1
 Vetterli 71;105;3;1;rifle;1
