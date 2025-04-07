@@ -1,6 +1,9 @@
 class Loadout
   attr_reader :primary_weapon, :secondary_weapon, :ammos, :consumables, :tools
 
+  # TODO: No duallies
+  # TODO: Froce medkit and melee
+
   def initialize
     @primary_weapon = { name: "", price: 0 }
     @secondary_weapon = { name: "", price: 0 }
@@ -12,11 +15,12 @@ class Loadout
 
   def randomize
     config = {
-      slots: 4,
-      budget: 1000,
+      slots: 5,
+      budget: 10000,
       bloodline_rank: 100,
       tools_count: 4,
-      consumables_count: 4
+      consumables_count: 4,
+      intelligent: true
     }
 
     max_attempts = 32
@@ -32,9 +36,27 @@ class Loadout
 
       attempts += 1
 
-      @primary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where("size >= 2").order("RANDOM()").first
-      slots_left = config[:slots] - @primary_weapon.size
-      @secondary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where(size: slots_left).order("RANDOM()").first
+      if config[:intelligent]
+        kind_categories = {
+          long: [ "rifle" ],
+          mid: [ "pistol" ],
+          short: [ "shotgun", "pistol_dual", "special" ]
+        }
+
+        @primary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where("size >= 2").order("RANDOM()").first
+
+        slots_left = config[:slots] - @primary_weapon.size
+
+        pw_category = kind_categories.find { |k, arr| arr.include?(@primary_weapon.kind) }&.first
+
+        kinds_left = kind_categories.reject { |key, _| key == pw_category }.values.flatten
+
+        @secondary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where(kind: kinds_left).where(size: slots_left).order("RANDOM()").first
+      else
+        @primary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where("size >= 2").order("RANDOM()").first
+        slots_left = config[:slots] - @primary_weapon.size
+        @secondary_weapon = Weapon.where("bloodline_rank <= ?", config[:bloodline_rank]).where(size: slots_left).order("RANDOM()").first
+      end
 
       if @primary_weapon.ammos.where(pool: 2).exists?
         @ammos[:ammo_primary] << @primary_weapon.ammos.where(pool: 1).order("RANDOM()").first
