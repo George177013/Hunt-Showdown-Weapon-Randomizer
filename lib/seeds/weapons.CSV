@@ -37,9 +37,9 @@ Dolch 96;690;1;1;pistol;1
 Dolch 96 Bullseye;725;1;1;pistol;1
 Dolch 96 Claw;700;1;1;pistol;1
 Dolch 96 Precision;730;2;1;pistol;1
-Dolch 96 Dual;1380;2;1;pistol;1
-Dolch 96 Bullseye Dual;1450;2;1;pistol;1
-Dolch 96 Claw Dual;1400;2;1;pistol;1
+Dolch 96 Dual;1380;2;1;pistol_dual;1
+Dolch 96 Bullseye Dual;1450;2;1;pistol_dual;1
+Dolch 96 Claw Dual;1400;2;1;pistol_dual;1
 Drilling;510;3;2;rifle;1
 Drilling Hatchet;340;2;2;rifle;1
 Drilling Shorty;330;2;2;rifle;1
@@ -108,7 +108,7 @@ Pax;80;1;1;pistol;1
 Pax Claw;90;1;1;pistol;1
 Pax Trueshot;141;1;1;pistol;1
 Pax Dual;160;2;1;pistol_dual;1
-Pax Claw Dual;180;2;1;v;1
+Pax Claw Dual;180;2;1;pistol_dual;1
 Pax Trueshot Dual;282;2;1;pistol_dual;1
 Railroad Hammer;45;1;0;melee;1
 Ranger 73;75;3;1;rifle;1
