@@ -14,10 +14,6 @@
   <h2>Customize Your Configuration</h2>
   <%= form_with url: randomize_path, method: :post, local: true do |form| %>
     <div>
-      <%= label_tag 'config[slots]', "Slots:" %>
-      <%= form.number_field 'config[slots]', value: @config[:slots] %>
-    </div>
-    <div>
       <%= label_tag 'config[budget]', "Budget:" %>
       <%= form.number_field 'config[budget]', value: @config[:budget] %>
     </div>
@@ -33,6 +29,10 @@
       <%= label_tag 'config[consumables_count]', "Consumables Count:" %>
       <%= form.number_field 'config[consumables_count]', value: @config[:consumables_count] %>
     </div>
+    <div>
+      <%= form.check_box 'config[slots]', {}, '5', '4' %>
+      <%= label_tag 'config_slots', "Quartermaster" %>
+   </div>
     <div>
       <%= form.check_box 'config[intelligent]', checked: @config[:intelligent] %>
       <%= label_tag 'config[intelligent]', "Intelligent" %>

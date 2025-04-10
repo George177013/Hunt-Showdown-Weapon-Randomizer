@@ -84,7 +84,7 @@ class Loadout
           @tools[0] = Tool.where(name: "First Aid Kit").first
         end
 
-        if config[:force_melee] && !@tools.any? { |tool| tool.kind == "melee" } && !@secondary_weapon.kind == "melee"
+        if config[:force_melee] && !@tools.any? { |tool| tool.kind == "melee" } && @secondary_weapon.kind != "melee"
           @tools[1] = Tool.where("bloodline_rank <= ?", config[:bloodline_rank]).where(kind: "melee").order("RANDOM()").first
         end
 
