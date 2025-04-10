@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loadout Randomizer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+<body>
+  <h1>Loadout Generator</h1>
+
+  <h2>Customize Your Configuration</h2>
+  <%= form_with url: randomize_path, method: :post, local: true do |form| %>
+    <div>
+      <%= label_tag 'config[slots]', "Slots:" %>
+      <%= form.number_field 'config[slots]', value: @config[:slots] %>
+    </div>
+    <div>
+      <%= label_tag 'config[budget]', "Budget:" %>
+      <%= form.number_field 'config[budget]', value: @config[:budget] %>
+    </div>
+    <div>
+      <%= label_tag 'config[bloodline_rank]', "Bloodline Rank:" %>
+      <%= form.number_field 'config[bloodline_rank]', value: @config[:bloodline_rank] %>
+    </div>
+    <div>
+      <%= label_tag 'config[tools_count]', "Tools Count:" %>
+      <%= form.number_field 'config[tools_count]', value: @config[:tools_count] %>
+    </div>
+    <div>
+      <%= label_tag 'config[consumables_count]', "Consumables Count:" %>
+      <%= form.number_field 'config[consumables_count]', value: @config[:consumables_count] %>
+    </div>
+    <div>
+      <%= form.check_box 'config[intelligent]', checked: @config[:intelligent] %>
+      <%= label_tag 'config[intelligent]', "Intelligent" %>
+    </div>
+    <div>
+      <%= form.check_box 'config[dualies]', checked: @config[:dualies] %>
+      <%= label_tag 'config[dualies]', "Dualies" %>
+    </div>
+    <div>
+      <%= form.check_box 'config[force_medkit]', checked: @config[:force_medkit] %>
+      <%= label_tag 'config[force_medkit]', "Force Medkit" %>
+    </div>
+    <div>
+      <%= form.check_box 'config[force_melee]', checked: @config[:force_melee] %>
+      <%= label_tag 'config[force_melee]', "Force Melee" %>
+    </div>
+    <div>
+      <%= form.submit "Randomize Loadout" %>
+    </div>
+  <% end %>
+
+  <hr />
+
+  <h2>Your Loadout</h2>
+  <%= render partial: "loadout/loadout", locals: { loadout: @loadout } %>
+</body>
+</html>

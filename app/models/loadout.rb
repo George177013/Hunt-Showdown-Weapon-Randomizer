@@ -1,5 +1,5 @@
 class Loadout
-  attr_reader :primary_weapon, :secondary_weapon, :ammos, :consumables, :tools
+  attr_reader :primary_weapon, :secondary_weapon, :ammos, :consumables, :tools, :total_cost
 
   def initialize
     @primary_weapon = { name: "", price: 0 }
@@ -94,33 +94,5 @@ class Loadout
       @total_cost = @primary_weapon.price + @secondary_weapon.price + @ammos[:ammo_primary].sum(&:price) + @ammos[:ammo_secondary].sum(&:price) + @consumables.sum(&:price) + @tools.sum(&:price)
 
     end while @total_cost > config[:budget] && attempts < max_attempts
-  end
-
-  def show
-    puts "Primary Weapon: #{@primary_weapon.name} - Price: #{@primary_weapon.price}"
-
-    puts "Primary Ammo:"
-    @ammos[:ammo_primary].each_with_index do |ammo, index|
-      puts "  #{index + 1}. #{ammo.name} - Price: #{ammo.price}"
-    end
-
-    puts "Secondary Weapon: #{@secondary_weapon.name} - Price: #{@secondary_weapon.price}"
-
-    puts "Secondary Ammo:"
-    @ammos[:ammo_secondary].each_with_index do |ammo, index|
-      puts "  #{index + 1}. #{ammo.name} - Price: #{ammo.price}"
-    end
-
-    puts "Tools:"
-    @tools.each_with_index do |tool, index|
-      puts "  #{index + 1}. #{tool.name} - Price: #{tool.price}"
-    end
-
-    puts "Consumables:"
-    @consumables.each_with_index do |consumable, index|
-      puts "  #{index + 1}. #{consumable.name} - Price: #{consumable.price}"
-    end
-
-    puts "Total Cost: #{@total_cost}"
   end
 end

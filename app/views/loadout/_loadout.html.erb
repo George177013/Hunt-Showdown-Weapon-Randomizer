@@ -1,0 +1,33 @@
+<turbo-frame id="loadout">
+  <% if loadout.primary_weapon[:name].present? %>
+    <h3>Primary Weapon: <%= loadout.primary_weapon[:name] %> (Price: <%= loadout.primary_weapon[:price] %>)</h3>
+    <h4>Primary Ammo:</h4>
+    <ul>
+      <% loadout.ammos[:ammo_primary].each do |ammo| %>
+        <li><%= ammo[:name] %> (Price: <%= ammo[:price] %>)</li>
+      <% end %>
+    </ul>
+    <h3>Secondary Weapon: <%= loadout.secondary_weapon[:name] %> (Price: <%= loadout.secondary_weapon[:price] %>)</h3>
+    <h4>Secondary Ammo:</h4>
+    <ul>
+      <% loadout.ammos[:ammo_secondary].each do |ammo| %>
+        <li><%= ammo[:name] %> (Price: <%= ammo[:price] %>)</li>
+      <% end %>
+    </ul>
+    <h4>Tools:</h4>
+    <ul>
+      <% loadout.tools.each do |tool| %>
+        <li><%= tool[:name] %> (Price: <%= tool[:price] %>)</li>
+      <% end %>
+    </ul>
+    <h4>Consumables:</h4>
+    <ul>
+      <% loadout.consumables.each do |consumable| %>
+        <li><%= consumable[:name] %> (Price: <%= consumable[:price] %>)</li>
+      <% end %>
+    </ul>
+    <h3>Total Cost: <%= loadout.total_cost %></h3>
+  <% else %>
+    <p>No loadout generated yet. Customize the configuration and hit "Randomize Loadout" to generate one.</p>
+  <% end %>
+</turbo-frame>
