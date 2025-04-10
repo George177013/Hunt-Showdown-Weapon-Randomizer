@@ -49,6 +49,6 @@ class LoadoutController < ApplicationController
   end
 
   def to_boolean(value)
-    value == "true" || value == true
+    ActiveModel::Type::Boolean.new.cast(value)
   end
 end
