@@ -30,10 +30,9 @@ threads threads_count, threads_count
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 preload_app!
 
-port 80
-ssl_bind '0.0.0.0', '443', {
-  key: "/rails/config/ssl/self-signed.key",
-  cert: "/rails/config/ssl/self-signed.crt"
+ssl_bind "0.0.0.0", "443", {
+  key: "/rails/config/ssl/server.key",  # Ensure this path is correct
+  cert: "/rails/config/ssl/server.crt"  # Ensure this path is correct
 }
 
 # Allow puma to be restarted by `bin/rails restart` command.
