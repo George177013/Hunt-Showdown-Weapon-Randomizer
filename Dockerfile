@@ -1,12 +1,6 @@
 # syntax=docker/dockerfile:1
-# check=error=true
 
-# This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t hunt_loadout_randomizer .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name hunt_loadout_randomizer hunt_loadout_randomizer
-
-# For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
-
+# This Dockerfile is designed for production, not development.
 # Make sure RUBY_VERSION matches the Ruby version in .ruby-version
 ARG RUBY_VERSION=3.4.2
 FROM docker.io/library/ruby:$RUBY_VERSION-slim AS base
@@ -16,16 +10,16 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 openssl&& \
+    apt-get install --no-install-recommends -y curl libjemalloc2 libvips sqlite3 openssl && \
     rm -rf /var/lib/apt/lists /var/cache/apt/archives
 
-# Set production environment
+# Set production environment variables and bundler configuration
 ENV RAILS_ENV="production" \
     BUNDLE_DEPLOYMENT="1" \
     BUNDLE_PATH="/usr/local/bundle" \
     BUNDLE_WITHOUT="development"
 
-# Throw-away build stage to reduce size of final image
+# Throw-away build stage to reduce size of the final image
 FROM base AS build
 
 # Install packages needed to build gems
@@ -45,30 +39,33 @@ COPY . .
 # Precompile bootsnap code for faster boot times
 RUN bundle exec bootsnap precompile app/ lib/
 
-# Precompiling assets for production without requiring secret RAILS_MASTER_KEY
-RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
-
-
-
+# Precompile assets for production
+# Remove the dummy secret workaround; ensure that your secret is available via credentials or environment
+RUN ./bin/rails assets:precompile
 
 # Final stage for app image
 FROM base
 
-# Copy built artifacts: gems, application
+# Add the necessary directories to PATH
+ENV PATH="${BUNDLE_PATH}/bin:/rails/bin:${PATH}"
+
+# Copy built artifacts: gems and application
 COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
 COPY --from=build /rails /rails
 
+# Copy SSL configuration
 COPY config/ssl /rails/config/ssl
 
-# Run and own only the runtime files as a non-root user for security
-RUN groupadd --system --gid 1000 rails && \
-    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
-USER 1000:1000
+# Copy the entrypoint script into the image
+COPY bin rails/bin
 
-# Entrypoint prepares the database.
+COPY config/credentials/production.yml.enc /rails/config/credentials/production.yml.enc
+COPY config/credentials/production.key /rails/config/credentials/production.key
+
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start server via Thruster by default, this can be overwritten at runtime
+# Expose HTTP and HTTPS ports
 EXPOSE 80 443
-CMD ["puma", "-C", "config/puma.rb"]
+
+# Start the server via Thruster by default, this can be overwritten at runtime
+CMD ["./bin/thrust", "./bin/rails", "server"]
