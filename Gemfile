@@ -42,6 +42,8 @@ gem "thruster", require: false
 
 gem "csv"
 
+gem "rack-ssl", require: "rack/ssl"
+
 gem "yaml_db"
 
 group :development, :test do
